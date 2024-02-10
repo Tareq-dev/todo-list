@@ -30,13 +30,13 @@ function App() {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="py-10">
+      <div className="pb-10 py-16">
         <h1 className="text-3xl font-bold text-center mb-4 text-white">Todo</h1>
         {/* TODOS CREATE FORM */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center mx-2 md:mx-0 gap-2">
           <input
             type="text"
-            className="border w-[350px] md:w-[500px] h-12 rounded-md outline-none shadow px-4"
+            className="border border-black md:w-[500px] h-12 rounded-md outline-none shadow px-4"
             placeholder="Create Todos.."
             value={inputTodo}
             onChange={(e) => setInputTodo(e.target.value)}
@@ -66,7 +66,7 @@ function App() {
             No todo added. Please Add Some..
           </p>
         ) : (
-          <div className="flex gap-3 mt-4">
+          <div className="flex mx-2 md:mx-0 flex-wrap gap-3 mt-4">
             <button
               className={`${
                 filter === "all"

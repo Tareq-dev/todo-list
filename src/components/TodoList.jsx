@@ -6,13 +6,11 @@ const TodoList = ({ filter }) => {
   const [editTodoId, setEditTodoId] = useState(null);
   const [editTodoText, setEditTodoText] = useState("");
 
-//EDIT TODOS
   const handleEdit = (id, text) => {
     setEditTodoId(id);
     setEditTodoText(text);
   };
 
-//EDIT TODOS SAVE
   const handleSaveEdit = (id) => {
     if (editTodoText.trim() !== "") {
       updateTodo({
@@ -25,7 +23,6 @@ const TodoList = ({ filter }) => {
     }
   };
 
-  //FILTER TODOS Via complete or not
   const filteredTodos = todos.filter(todo => {
     if (filter === "complete") {
       return todo.completed;
@@ -36,15 +33,14 @@ const TodoList = ({ filter }) => {
   });
 
   return (
-    <div className="mt-4">
+    <div className="mt-4 mx-2 md:mx-0 ">
       <ul className="space-y-2">
-        
         {filteredTodos.map((todo) => (
           <li
             key={todo.id}
-            className="flex items-center justify-between bg-white shadow-md p-4 rounded-lg"
+            className="flex flex-col md:flex-row items-center  justify-between bg-white shadow-md p-4 rounded-lg"
           >
-            <div className="flex items-center">
+            <div className="flex items-center mb-2 md:mb-0 w-full md:w-auto">
               <input
                 type="checkbox"
                 checked={todo.completed}
@@ -57,7 +53,7 @@ const TodoList = ({ filter }) => {
                   value={editTodoText}
                   onChange={(e) => setEditTodoText(e.target.value)}
                   onBlur={() => handleSaveEdit(todo.id)}
-                  className="border-b border-dotted border-gray-500 focus:outline-none"
+                  className="border-b border-dotted border-gray-500 focus:outline-none flex-1"
                 />
               ) : (
                 <span
@@ -83,7 +79,7 @@ const TodoList = ({ filter }) => {
                 <>
                   <button
                     onClick={() => handleEdit(todo.id, todo.text)}
-                    className="text-gray-500 hover:text-gray-600 mr-2 focus:outline-none"
+                    className="text-gray-500 hover:text-gray-600 focus:outline-none"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

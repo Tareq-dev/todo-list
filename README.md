@@ -2,7 +2,7 @@
 
 ## Description
 
-TODO APP is a simple task management application built with React, Tailwind CSS, and toast notifications. It allows users to organize their tasks efficiently by providing essential features such as adding, editing, deleting, and filtering tasks based on completion status. The application ensures data persistence by utilizing LocalStorage, ensuring that tasks are saved even when the user closes the app. Additionally, it offers a convenient "Clear All" functionality to remove all tasks from the list and utilizes toast notifications to provide feedback for various user actions.
+TODO APP is a simple task management application built with React, Tailwind CSS, and toast notifications. It allows users to organize their tasks efficiently by providing essential features such as adding, editing, deleting, and filtering tasks based on completion status.
 
 ## Features
 
@@ -19,5 +19,3 @@ TODO APP is a simple task management application built with React, Tailwind CSS,
 - React
 - Tailwind CSS
 - Toast (assuming a library for toast notifications)
-
-Feel free to add more features or expand on the existing ones based on your requirements. Happy coding!
