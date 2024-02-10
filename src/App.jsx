@@ -8,6 +8,7 @@ function App() {
   const { addTodo, todos, clearAllTodos } = useTodoContext();
   const [filter, setFilter] = useState("all");
 
+  //ADD TODO
   const handleAddTodo = () => {
     if (inputTodo.trim() !== "") {
       addTodo({
@@ -21,7 +22,7 @@ function App() {
       toast.error("Input field required");
     }
   };
-
+  //CLEAR ALL TODOS
   const handleClearTodos = () => {
     clearAllTodos();
     toast.success("All todos cleared!!");
@@ -31,6 +32,7 @@ function App() {
     <div className="flex justify-center items-center">
       <div className="py-10">
         <h1 className="text-3xl font-bold text-center mb-4 text-white">Todo</h1>
+        {/* TODOS CREATE FORM */}
         <div className="flex items-center gap-2">
           <input
             type="text"
@@ -56,8 +58,13 @@ function App() {
             </svg>
           </button>
         </div>
+
+        {/* TODOS FILTERING */}
+
         {todos.length === 0 ? (
-          <p className="text-center mt-20 text-lg font-bold text-white">No todo added. Please Add Some..</p>
+          <p className="text-center mt-20 text-lg font-bold text-white">
+            No todo added. Please Add Some..
+          </p>
         ) : (
           <div className="flex gap-3 mt-4">
             <button
@@ -98,7 +105,9 @@ function App() {
             </button>
           </div>
         )}
-        <TodoList todos={todos} filter={filter} />
+
+        {/* TODOS LIST SHOWN ON UI */}
+        <TodoList filter={filter} />
       </div>
       <Toaster />
     </div>

@@ -6,11 +6,13 @@ const TodoList = ({ filter }) => {
   const [editTodoId, setEditTodoId] = useState(null);
   const [editTodoText, setEditTodoText] = useState("");
 
+//EDIT TODOS
   const handleEdit = (id, text) => {
     setEditTodoId(id);
     setEditTodoText(text);
   };
 
+//EDIT TODOS SAVE
   const handleSaveEdit = (id) => {
     if (editTodoText.trim() !== "") {
       updateTodo({
@@ -23,18 +25,20 @@ const TodoList = ({ filter }) => {
     }
   };
 
+  //FILTER TODOS Via complete or not
   const filteredTodos = todos.filter(todo => {
     if (filter === "complete") {
       return todo.completed;
     } else if (filter === "incomplete") {
       return !todo.completed;
     }
-    return true; // "all" filter
+    return true; 
   });
 
   return (
     <div className="mt-4">
       <ul className="space-y-2">
+        
         {filteredTodos.map((todo) => (
           <li
             key={todo.id}

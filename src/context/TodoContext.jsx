@@ -7,6 +7,7 @@ export const useTodoContext = () => {
 };
 
 const TodoProvider = ({ children }) => {
+     //GET TODOS FROM PERSISTANCE
   const getTodos = JSON.parse(localStorage.getItem("todos"));
 
   const [todos, setTodos] = useState(getTodos ? getTodos : []);
@@ -32,12 +33,17 @@ const TodoProvider = ({ children }) => {
       todos.map((todo) => (todo.id === updatedTodo.id ? updatedTodo : todo))
     );
   };
+   
   const clearAllTodos = () => {
     setTodos([]);
   };
+
+
+   //TODOS PERSISTANCE
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
+
   return (
     <TodoContext.Provider
       value={{
