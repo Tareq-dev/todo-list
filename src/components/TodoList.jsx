@@ -119,7 +119,7 @@ const TodoList = ({ filter }) => {
               )}
             </div>
           </li>
-        ))}
+        )).reverse()}
       </ul>
     </div>
   );
